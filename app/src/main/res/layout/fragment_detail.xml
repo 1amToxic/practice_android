@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     android:background="#79BDE9"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".fragment.FragmentDetail">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/tv_name_dt"
         android:layout_width="wrap_content"

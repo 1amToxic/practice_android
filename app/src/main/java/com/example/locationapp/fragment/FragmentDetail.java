@@ -29,9 +29,8 @@ public class FragmentDetail extends Fragment implements View.OnClickListener {
         // Required empty public constructor
     }
 
-    public static FragmentDetail newInstance(String param1, String param2) {
+    public static FragmentDetail newInstance() {
         FragmentDetail fragment = new FragmentDetail();
-        Bundle args = new Bundle();
 
         return fragment;
     }
@@ -67,6 +66,7 @@ public class FragmentDetail extends Fragment implements View.OnClickListener {
         Glide.with(view.getContext())
                 .load(location.getImageSource())
                 .centerCrop()
+                .placeholder(R.mipmap.ic_launcher)
                 .into(imageView);
         btnMap.setOnClickListener(this);
     }
@@ -74,9 +74,9 @@ public class FragmentDetail extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Uri gmmIntentUri = Uri.parse("google.navigation:q=10.276024,104.013676");
+        Uri gmmIntentUri = Uri.parse("geo:"+location.getLat()+","+location.get_long());
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
-        getContext().startActivity(mapIntent);
+        startActivity(mapIntent);
     }
 }
