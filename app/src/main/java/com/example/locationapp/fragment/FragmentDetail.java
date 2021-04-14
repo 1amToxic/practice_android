@@ -43,23 +43,15 @@ public class FragmentDetail extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         location = (Location) getArguments().getSerializable("location");
         View view = inflater.inflate(R.layout.fragment_detail, container, false);
         initView(view);
+        setUpData(view);
         return view;
 
     }
 
-    private void initView(View view) {
-        tvDesDetail = view.findViewById(R.id.tv_des_dt);
-        tvNameDetail = view.findViewById(R.id.tv_name_dt);
-        imageView = view.findViewById(R.id.image_location);
-        btnMap = view.findViewById(R.id.btn_map);
-        //set data for view
-
-
-
+    private void setUpData(View view) {
         tvDesDetail.setText(location.getDescription());
         tvNameDetail.setText(location.getName());
 
@@ -69,6 +61,13 @@ public class FragmentDetail extends Fragment implements View.OnClickListener {
                 .placeholder(R.mipmap.ic_launcher)
                 .into(imageView);
         btnMap.setOnClickListener(this);
+    }
+
+    private void initView(View view) {
+        tvDesDetail = view.findViewById(R.id.tv_des_dt);
+        tvNameDetail = view.findViewById(R.id.tv_name_dt);
+        imageView = view.findViewById(R.id.image_location);
+        btnMap = view.findViewById(R.id.btn_map);
     }
 
 
