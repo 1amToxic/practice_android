@@ -3,4 +3,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="item_spinner">
+        <item>Kotlin</item>
+        <item>Java</item>
+        <item>Dart</item>
+        <item>React Native</item>
+        <item>Switf</item>
+    </string-array>
 </resources>
